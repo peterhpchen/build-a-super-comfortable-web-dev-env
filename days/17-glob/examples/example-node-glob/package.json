@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "search": "node ./search.js"
+  },
+  "dependencies": {
+    "glob": "^7.1.7"
+  }
+}
