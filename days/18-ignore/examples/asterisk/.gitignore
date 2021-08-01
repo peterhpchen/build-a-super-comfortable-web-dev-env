@@ -1,0 +1,2 @@
+# Ignore any file in directory foo
+foo/*

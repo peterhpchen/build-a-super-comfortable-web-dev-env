@@ -1,0 +1,2 @@
+# Ignore .js with name a, b, c
+[a-c].js

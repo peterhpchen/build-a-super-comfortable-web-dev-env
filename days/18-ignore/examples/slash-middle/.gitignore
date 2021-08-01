@@ -1,0 +1,2 @@
+# Ignore foo/bar but not a/foo/bar
+foo/bar
