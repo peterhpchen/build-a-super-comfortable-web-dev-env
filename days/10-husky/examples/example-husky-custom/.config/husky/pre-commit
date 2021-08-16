@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+cd days/10-husky/examples/example-husky-custom
+echo "hello"
+echo "pre-commit"

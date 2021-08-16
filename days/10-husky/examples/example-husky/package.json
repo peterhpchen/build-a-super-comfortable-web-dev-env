@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "prepare": "cd ../../../../ && husky install days/10-husky/examples/example-husky/.husky"
+  },
+  "devDependencies": {
+    "husky": "^7.0.1"
+  }
+}
