@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+cd days/18-combo-commit-message/examples/husky-commitizen-commitlint
+exec < /dev/tty && node_modules/.bin/cz --hook || true

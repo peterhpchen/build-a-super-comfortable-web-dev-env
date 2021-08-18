@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "prepare": "cd ../../../../ && husky install days/18-combo-commit-message/examples/husky-commitlint/.husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.1"
+  }
+}
