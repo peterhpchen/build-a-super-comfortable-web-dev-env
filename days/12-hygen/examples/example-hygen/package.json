@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "hygen": "hygen generator new",
+    "hygen:dry": "hygen generator new --dry"
+  },
+  "devDependencies": {
+    "hygen": "^6.1.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "hygen": "hygen generator new world --nth second"
+  },
+  "devDependencies": {
+    "hygen": "^6.1.0"
+  }
+}
