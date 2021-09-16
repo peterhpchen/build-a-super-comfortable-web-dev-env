@@ -1,6 +1,4 @@
-# 01 - 優雅地管理應用程式
-
-> 使用 Homebrew 管理 Mac OS 的套件。
+# 01 - Homebrew - 套件管理工具
 
 不同的應用程式都有不一樣的安裝方式，有的需要下載安裝包，有些則是下指令安裝，還有些可以藉由 App Store 安裝。除了第一次的安裝外，各式套件的更新或刪除的方式也是千奇百怪，增加了管理套件的難度。
 
@@ -12,7 +10,7 @@
 
 Homebrew 使用 CLI 指令安裝各式的套件，這其中包含 CLI 與 GUI 應用程式（藉由 [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)）。
 
-Homebrew 在使用者下達安裝指令時，會去找尋對應的 formula （Homebrew Cask 的腳本稱為 cask ）， formula 是個 Ruby 腳本，在 formula 中定義了這個套件的安裝細節， Homebrew 藉由這個腳本執行對應的安裝。
+Homebrew 在使用者下達安裝指令時，會去找尋對應的 formula （Homebrew Cask 的腳本稱為 cask ）， formula 是個 Ruby 腳本，在 formula 中定義了這個套件的安裝細節， Homebrew 藉由這個腳本執行對應的安裝。
 
 Homebrew 旨在以單一窗口管理各式套件，藉以降低管理的難度，以提高效率。
 
