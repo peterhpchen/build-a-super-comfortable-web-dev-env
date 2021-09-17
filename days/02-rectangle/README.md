@@ -10,7 +10,7 @@ macOS 原生並不支援視窗的分割顯示，可以達到差不多效果的�
 
 Rectangle 是個 macOS 的應用程式，它可以讓使用者利用鼠標或是快捷鍵將螢幕等分區隔，並在不同的區域中放入不同的視窗。
 
-## 安裝 Rectanlgle
+## 安裝 Rectangle
 
 使用 Homebrew 安裝 Rectangle ：
 
