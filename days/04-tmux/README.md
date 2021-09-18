@@ -47,7 +47,7 @@ Tmux 的指令都會由 prefix 開始，預設是 Control-B ，接著會使用�
 
 | 指令                                        | 動作                                                     |
 | ------------------------------------------- | -------------------------------------------------------- |
-| Control-B %                                 |  將當前 Pane 垂直分割為兩個 Pane                         |
+| Control-B %                                 | 將當前 Pane 垂直分割為兩個 Pane                          |
 | Control-B "                                 | 將當前 Pane 水平分割為兩個 Pane                          |
 | Control-B z                                 | 將當前的 Pane 放到最大，如果已在最大的狀態，則會恢復原狀 |
 | Control-B Option Up/Bottom/Left/Right Arrow | 將當前 Pane 依照方向鍵的方位重新分配大小                 |
