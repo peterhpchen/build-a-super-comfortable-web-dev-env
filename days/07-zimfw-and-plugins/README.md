@@ -211,7 +211,7 @@ Zim 提供了許多的 [Modules](https://zimfw.sh/docs/modules/) 與 [Themes](ht
 
 另外也有許多第三方的套件也可以使用 Zim 來管理，只要是使用 `{init.zsh,module_name.{zsh,plugin.zsh,zsh-theme,sh}}` 的檔案安裝的套件都可以，如果不是的話，也可以使用 `zmodule --source` 指定安裝的檔案。
 
-這些第三方套件，像是 [Spaceship](https://spaceship-prompt.sh/) 、 [alias-tips](https://github.com/djui/alias-tips) 等，都可以藉由 [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) 尋找。
+這些第三方套件，像是 [Spaceship](https://spaceship-prompt.sh/) 、 [alias-tips](https://github.com/djui/alias-tips) 與 [z](https://github.com/rupa/z) 等，都可以藉由 [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) 尋找。
 
 ## 本文重點整理
 
