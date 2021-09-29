@@ -24,7 +24,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
 
-> 腳本的版本請使用最新的（目前是 v0.38.0 ） 可以到 [nvm 的 GitHub 中取得最新版本號](https://github.com/nvm-sh/nvm/releases)。
+> 腳本的版本請使用最新的（目前是 v0.38.0 ） 可以到 [nvm 的 GitHub 中取得最新版本號](https://github.com/nvm-sh/nvm/releases)。
 
 安裝腳本會將 nvm 的程式建立在 `~/.nvm` 中，並會變更 profile 檔案內容讓 nvm 載入。
 
@@ -119,7 +119,7 @@ nvm ls
 nvm version
 ```
 
-### 使用 `.nvmrc` 檔案預設 Node.js 版本
+### 使用 `.nvmrc` 檔案預設 Node.js 版本
 
 nvm 提供使用者 `.nvmrc` 檔案來配置專案預設的 Node.js 版本：
 
@@ -129,7 +129,7 @@ lts/*
 
 `.nvmrc` 的內容為要使用的版本號或是 alias 。
 
- 當專案下有這個檔案時，可以不用指定版本直接使用 `nvm use` 或是 `nvm install` ， nvm 會依照 `.nvmrc` 的版本處理。
+當專案下有這個檔案時，可以不用指定版本直接使用 `nvm use` 或是 `nvm install` ， nvm 會依照 `.nvmrc` 的版本處理。
 
 ## 總結
 
