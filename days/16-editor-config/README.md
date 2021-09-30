@@ -1,16 +1,14 @@
 # EditorConfig
 
-使用 EditorConfig 統一不同編輯器與 IDE 間的輸入規範。
+不同的編輯器預設的輸入方式都不盡相同，因此同個專案的同個檔案使用不同的編輯器修改，可能會因為輸入的格式不同，而使整體的格式不一致，造成閱讀與管理上的困難。
+
+一般的解決方式是直接修改編輯器內輸入的相關設定，使其匹配專案的設定，但是每個編輯器的設定方式不同，同個效果的配置屬性也可能不同，難以確保設定後的一致性。
 
 ## 介紹 EditorConfig
 
+![logo](./assets/logo.png)
+
 EditorConfig 是由專案中的配置文件與各式編輯器的插件所組成的，藉由使用的編輯器插件讀取配置文件，從而將編輯器的設定修改為與 EditorConfig 的配置一致。
-
-## EditorConfig 解決的問題
-
-不同的編輯器預設的輸入方式都不盡相同，因此同個專案的同個檔案使用不同的編輯器修改，可能會因為輸入的格式不同，而使整體的格式不一致，造成閱讀困難。
-
-一般的解決方式是直接修改編輯器內輸入的相關設定，使其匹配專案的設定，但是每個編輯器的設定方式不同，同個效果的配置屬性也可能不同，難以確保設定後的一致性。
 
 EditorConfig 使用的配置文件在不同的編輯器中都是相同的設定方式，使用這個所有編輯器共用的配置做設定，搭配編輯器中 EditorConfig 的插件做解析並轉為各個編輯器原生的設定，使輸入方式在不同的編輯器之間達成一致。
 
@@ -61,18 +59,49 @@ EditorConfig 依照編輯器的支援種類，分為**原生支援**與**依靠�
 - 原生支援：編輯器本身就支援 EditorConfig 的配置，像是 WebStorm 、 Visual Studio 等，完整列表可以參照 [EditorConfig No Plugin Necessary](https://editorconfig.org/#pre-installed) ）。
 - 依靠插件支援：編輯器本身不支援 EditorConfig ，但通過安裝插件可實現其功能，像是 Visual Studio Code 、 Atom 等，完整列表可以參照 [EditorConfig Download a Plugin](https://editorconfig.org/#download) 。
 
-## 總結
+## 在 Visual Studio Code 中使用 EditorConfig
 
-現今的編輯器多元，而每個編輯器的設定方式都不盡相同，要使用各編輯器的原生設定來確保專案中每個人的輸入方式是很困難的。
+由於 Visual Studio Code 原生並不支援 EditorConfig ，因此需要另外安裝插件 [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) ，安裝完成後就可以直接設定 `.editorconfig` 開始使用。
 
-EditorConfig 可以使用單一設定方式統一跨編輯器輸入規範，當使用了 EditorConfig 配置後，所有參與開發的人都能享有一致的規範。
+VS Code 的 EditorConfig 目前支援下列屬性：
 
-使用 EditorConfig 的方式是依照專案需求編輯 `.editorconfig` ，並在編輯器中安裝插件來執行相關的配置修改。
+- `indent_style`
+- `indent_size`
+- `tab_width`
+- `end_of_line` (on save)
+- `insert_final_newline` (on save)
+- `trim_trailing_whitespace` (on save)
 
-EditorConfig 配置簡單，但卻能有效的統一編輯器間的規範，對於開發來說是個十分便利的工具。
+只要依照 EditorConfig 規定的設定相關的配置屬性，就可以給每個人的編輯器帶來相同的輸入配置。
+
+### 將 EditorConfig 插件加入 VS Code 專案
+
+為了讓專案的其他使用者可以順利的安裝插件，我們可以將插件加入推薦清單中。
+
+![extension](./assets/extension.png)
+
+在插件的介紹頁上按下**設定的齒輪**，並且選擇 **Add to Workspace Recommendations** ，就可以將其加入清單。
+
+或者也可以直接開啟 `.vscode/extensions.json` 進行編輯：
+
+```json
+{
+  "recommendations": ["editorconfig.editorconfig"]
+}
+```
+
+## 本文重點整理
+
+- 現今的編輯器多元，而每個編輯器的設定方式都不盡相同，要使用各編輯器的原生設定來確保專案中每個人的輸入方式是很困難的。
+- EditorConfig 可以使用單一設定方式統一跨編輯器輸入規範，當使用了 EditorConfig 配置後，所有參與開發的人都能享有一致的規範。
+- 使用 EditorConfig 的方式是依照專案需求編輯 `.editorconfig` ，並在編輯器中安裝插件來執行相關的配置修改。
+- 依照不同的編輯器與環境， EditorConfig 的支援分為兩個：**原生支援**與**依靠插件支援**。
+- Visual Studio Code 要使用 EditorConfig ，必須依靠插件支援。
+- 可以將 EditorConfig 的插件加入 VS Code 專案的插件推薦清單中，其他的使用者可以依照清單安裝需要的插件。
 
 ## 參考資料
 
 - [EditorConfig](https://editorconfig.org/)
 - [EditorConfig Specification](https://editorconfig-specification.readthedocs.io/)
 - [freeCodeCamp: Why You Should Use EditorConfig to Standardize Code Styles](https://www.freecodecamp.org/news/how-to-use-editorconfig-to-standardize-code-styles/)
+- [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
