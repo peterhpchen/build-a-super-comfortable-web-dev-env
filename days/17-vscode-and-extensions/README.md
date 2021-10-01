@@ -106,7 +106,7 @@ code --install-extension GitHub.github-vscode-theme
 
 ```bash
 {
-  "workbench.iconTheme": "GitHub Dark Dimmed"
+  "workbench.colorTheme": "GitHub Dark Dimmed"
 }
 ```
 
