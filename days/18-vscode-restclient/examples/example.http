@@ -1,0 +1,14 @@
+@hostname = api.github.com
+
+###
+
+https://{{hostname}}/users/peterhpchen
+
+###
+
+POST https://{{hostname}}/markdown HTTP/1.1
+Accept: application/vnd.github.v3+json
+
+{
+  "text": "## Hello, markdown!"
+}

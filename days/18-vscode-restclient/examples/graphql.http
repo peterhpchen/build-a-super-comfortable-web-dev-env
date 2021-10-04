@@ -1,0 +1,30 @@
+@hostname = api.github.com
+
+###
+
+POST https://{{hostname}}/graphql
+Authorization: Bearer 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
+X-REQUEST-TYPE: GraphQL
+
+query {
+  viewer {
+    login
+  }
+}
+
+###
+
+POST https://{{hostname}}/graphql
+Authorization: Bearer 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
+X-REQUEST-TYPE: GraphQL
+
+query($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
+    name
+  }
+}
+
+{
+  "name": "dotfiles",
+  "owner": "peterhpchen"
+}
