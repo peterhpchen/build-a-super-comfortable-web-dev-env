@@ -4,6 +4,9 @@
     "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "bierner.markdown-preview-github-styles",
+    "foxundermoon.shell-format",
+    "holmescn.vscode-wordcount-cjk"
   ]
 }
