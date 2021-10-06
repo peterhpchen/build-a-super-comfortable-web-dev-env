@@ -92,11 +92,45 @@ module.exports = {
 
 它會對所有的提交的檔案執行 `echo` 與 `cat` 。
 
-## 總結
+## 在 husky 中設置 lint-staged
 
-在每次提交時，對專案中所有檔案做優化的處理是沒必要的，只會浪費更多的資源。
+為了在提交代碼時可以觸發各種檢查工具，我們需要將 lint-staged 藉由 husky 配置到 Git hook 上：
 
-lint-staged 讓優化的程序可以聚焦於暫存檔案上，只有那些這次提交的檔案會作用這些優化程序，並且可以利用 glob 指示要使用不同指令。
+```bash
+npx husky add .husky/pre-commit 'npx lint-staged'
+```
+
+然後重新註冊 Git hooks ：
+
+```bash
+npm install
+```
+
+`npm install` 會觸發在執行 `husky-init` 時建立的 `prepare` script ，去做相關的初始化工作。
+
+> 如果需要 husky 相關的使用說明，請看[本系列的 husky 一文]()的介紹。
+> 這樣一來，每當我們提交代碼時，就會叫用 `npx lint-staged` 把提交的檔案路徑送去給 lint-staged 中設定指令做處理。
+
+## 在 lint-staged 中依照檔案類型設置對應的工具
+
+為了讓 lint-staged 可以對於各類型的檔案提供合適的工具做處理，我們需要設定 `lint-staged.config.js` ：
+
+```js
+module.exports = {
+  'package.json': ['prettier --write'],
+  '*.js': ['npx eslint --fix', 'prettier --write'],
+  '*.css': ['stylelint --fix', 'prettier --write'],
+  '*.md': ['markdownlint', 'prettier --write'],
+};
+```
+
+藉由 glob 設定各個檔案類型應該被哪些工具檢查，藉以避免不必要的花費與衝突產生。
+
+## 本文重點整理
+
+- 在每次提交時，對專案中所有檔案做優化的處理是沒必要的，只會浪費更多的資源。
+- lint-staged 讓優化的程序可以聚焦於暫存檔案上，只有那些這次提交的檔案會作用這些優化程序，並且可以利用 glob 指示要使用不同指令。
+- 藉由 lint-staged 與 husky 的搭配，我們可以在 `git commit` 的時候叫用 lint-staged ，接著在 lint-staged 中針對各種不同的檔案類型設置對應的處理工具，如此一來，可以減少工具因不符合的檔案而進行無用的處理，也可以降低衝突的產生。
 
 ## 參考資料
 
