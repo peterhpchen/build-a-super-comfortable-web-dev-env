@@ -1,28 +1,28 @@
-# Markdownlint
-
-使用 Markdownlint 規範 Markdown 寫法。
-
-## 介紹 Markdownlint
-
-Markdownlint 是個用以規範 Markdown 寫法的工具，最初是由 [Ruby 開發](https://github.com/markdownlint/markdownlint)而成，現在也有了 [Node.js 的版本](https://github.com/DavidAnson/markdownlint)，這裡會使用 Node.js 版本做說明。
-
-Node.js 版本的 Markdownlint 所提供的 API [被許多工具使用](https://github.com/DavidAnson/markdownlint#related)， 我們使用 [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli) 作為執行的媒介。
-
-## Markdownlint 解決的問題
+# 26 - MarkdownLint - Lint Markdown 文件
 
 Markdown 格式不需要編輯器添加任何的支援就可以撰寫，利用簡單的語法就可以定義各種樣式，是現今在寫技術文件時的主流文件格式。
 
 但是自由的寫作方式卻十分容易造成樣式不一致的問題。
 
-為此 Markdownlint 被發明出來，使用其內建的規則加以限制來達到一致的寫法規範。
+## 使 Markdown 的格式一致化 - Markdownlint
 
-## 使用 Markdownlint
+![markdownlint](./assets/markdownlint-128.png)
+
+Markdownlint 是個用以規範 Markdown 寫法的工具，最初是由 [Ruby 開發](https://github.com/markdownlint/markdownlint)而成，現在也有了 [Node.js 的版本](https://github.com/DavidAnson/markdownlint)，這裡會使用 Node.js 版本做說明。
+
+Node.js 版本的 Markdownlint 所提供的 API [被許多工具使用](https://github.com/DavidAnson/markdownlint#related)， 我們使用 [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli) 作為執行的媒介。
+
+它會使用其內建的規則加以限制來達到一致的寫法規範。
+
+## 安裝 Markdownlint
 
 markdownlint-cli 是個 npm 套件，需要先行安裝：
 
 ```bash
 npm install markdownlint-cli --save-dev
 ```
+
+## 使用 Markdownlint
 
 使用配置檔 `.markdownlint.js` 決定要使用哪些規則：
 
@@ -32,7 +32,7 @@ module.exports = {
   MD001: true, // enables rule MD001
   MD003: { style: 'atx_closed' }, // set parameter style of rule MD003 to atx_closed
   'first-line-heading': true, // enables alias first-line-heading
-  'atx_closed': true, // enables tag atx-closed
+  atx_closed: true, // enables tag atx-closed
 };
 ```
 
@@ -76,7 +76,7 @@ module.exports = {
   MD001: true, // enables rule MD001
   MD003: { style: 'atx_closed' }, // set parameter style of rule MD003 to atx_closed
   'first-line-heading': true, // enables alias first-line-heading
-  'atx_closed': true, // enables tag atx-closed
+  atx_closed: true, // enables tag atx-closed
 };
 ```
 
@@ -98,13 +98,9 @@ module.exports = {
 
 ## 總結
 
-Markdown 作為文件格式，提供了許多語法來設定各種豐富的樣式，但由於其極高的自由度，使得每個人在使用 Markdown 寫文件時總會有自己的一套方法，這造成了寫法不一致的問題。
-
-Markdownlint 作為 Markdown 格式的規範工具，提供了許多有用的規則，使用者利用這些規則來確保不同 Markdown 文件的一致性。
-
-如果想要自己設定規則也可以建立配置檔做相關的設定，並利用 `.markdownlintignore` 檔案的設定排除特定的檔案。
-
-Markdownlint 是針對 Markdown 寫法去做規範，使得使用者可以得到寫法一致的 Markdown 文件。
+- Markdown 作為文件格式，提供了許多語法來設定各種豐富的樣式，但由於其極高的自由度，使得每個人在使用 Markdown 寫文件時總會有自己的一套方法，這造成了寫法不一致的問題。
+- Markdownlint 作為 Markdown 格式的規範工具，提供了許多有用的規則，使用者利用這些規則來確保不同 Markdown 文件的一致性。
+- 如果想要自己設定規則也可以建立配置檔做相關的設定，並利用 `.markdownlintignore` 檔案的設定排除特定的檔案。
 
 ## 參考資料
 
