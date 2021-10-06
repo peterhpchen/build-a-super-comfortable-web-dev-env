@@ -1,14 +1,4 @@
-# Hygen
-
-使用 Hygen 作為專案的程式碼產生器。
-
-## 介紹 Hygen
-
-Hygen 是個 npm 套件，它是個程式碼產生器，可以依照模板產生對應的程式碼檔案。
-
-在使用 Hygen 作為產生器前，我們要編輯程式碼生成時參考的模板檔案，完成模板的編輯後，使用 Hygen 的 CLI 叫用對應的模板，並帶入模板所需的參數，藉此就可以完成程式碼的產生。
-
-## 使用 Hygen 的原因
+# 28 - Hygen - 程式碼產生器
 
 在開發時，我們總是需要為系統加入新的功能，這意味著專案中的檔案會逐漸增多，雖然依照要擴充的功能不同，要加入的檔案類型也會有些許的不同，但是對於檔案的命名以及檔案內部的大框架要盡量地保持一致，有了一致性，才能確保程式碼的品質。
 
@@ -16,7 +6,13 @@ Hygen 是個 npm 套件，它是個程式碼產生器，可以依照模板產生
 
 以程式碼產生器取代手動建立程式碼，不僅可以保證程式碼的一致性，也可以減少因手動建立所耗費的時間與錯誤的發生率。
 
-## 使用 Hygen
+## 介紹 Hygen
+
+Hygen 是個 npm 套件，它是個程式碼產生器，可以依照模板產生對應的程式碼檔案。
+
+在使用 Hygen 作為產生器前，我們要編輯程式碼生成時參考的模板檔案，完成模板的編輯後，使用 Hygen 的 CLI 叫用對應的模板，並帶入模板所需的參數，藉此就可以完成程式碼的產生。
+
+## 安裝 Hygen
 
 Hygen 為 npm 套件，需要先使用 npm 安裝：
 
@@ -24,7 +20,9 @@ Hygen 為 npm 套件，需要先使用 npm 安裝：
 npm install hygen --save-dev
 ```
 
-接著建立模板，在 `_template/generator/new` 中加入模板檔案 `hello.ejs.t` ：
+## 使用 Hygen
+
+在使用前先建立模板，在 `_template/generator/new` 中加入模板檔案 `hello.ejs.t` ：
 
 ```yaml
 ---
@@ -125,9 +123,9 @@ This is your second hygen template.
 Learn what it can do here:
 
 https://github.com/jondot/hygen
-`
+`;
 
-console.log(hello)
+console.log(hello);
 ```
 
 ## 模板編輯方式
@@ -188,12 +186,12 @@ module.exports = [
     message: 'Name:',
     validate(value) {
       if (!value.length) {
-        return 'New must have a name.'
+        return 'New must have a name.';
       }
-      return true
+      return true;
     },
   },
-]
+];
 ```
 
 這個由 COMMON.JS 模組導出的陣列，設定各步驟的問答方式， Hygen 使用 [Enquirer](https://github.com/enquirer/enquirer#prompt-options) 來提供問答的配置，屬性 `name` 表示此問答結果傳入的參數名稱，我們可以用這名稱的變數在模板內使用這個回答的值。
@@ -204,7 +202,6 @@ module.exports = [
 ---
 to: <%= name %>/README.md
 ---
-
 # <%= name %>
 ```
 
@@ -218,9 +215,9 @@ to: <%= name %>/README.md
 
 > 如果有傳入參數，就算是有設定問答也會被忽略，以上面的例子來說，如果執行指令 `npx hygen generator new --name hello` ，那此問答就會被忽略。
 
-## 總結
+## 本文重點整理
 
-程式碼產生器既可以統一程式碼的架構與檔案名稱，也可以節省手動建檔的花費，讓開發更為輕鬆。
+- 程式碼產生器既可以統一程式碼的架構與檔案名稱，也可以節省手動建檔的花費，讓開發更為輕鬆。
 
 ## 參考資料
 
