@@ -1,20 +1,16 @@
-# stylelint
+# 25 - Stylelint - Lint CSS 程式碼
 
-用 stylelint 規範樣式的寫法。
+樣式表雖然較 JavaScript 單純，但隨著規則定義越來越多，樣式表還是會因複雜的結構與繁雜的規則配置而使得可讀性降低，甚至造成錯誤。
 
-## 介紹 stylelint
+## 讓 CSS 代碼更漂亮 - stylelint
 
 stylelint 使開發者可以規範樣式寫法，除了增加可讀性外，也可以避免部分在運行中可能發生的錯誤。
 
 除了純樣式表（ `.css` ）外， stylelint 也可以作用於內嵌在 HTML 、 markdown 的樣式或是 CSS-in-JS 中。而除了標準的 CSS 外，透過 Plugins 也可以支援 SCSS 、 Sass 、 Less 或是 SugarSS 等不同的樣式語言。
 
-## stylelint 解決的問題
-
-樣式表雖然較 JavaScript 單純，但隨著規則定義越來越多，樣式表還是會因複雜的結構與繁雜的規則配置而使得可讀性降低，甚至造成錯誤。
-
 stylelint 利用靜態分析解析樣式並將可能的問題拋出，並修復部分的問題，如此一來可以降低錯誤的發生也可以減少 code review 所花費的時間。
 
-## 使用 stylelint
+## 安裝 stylelint
 
 stylelint 為 npm 套件，須要先安裝：
 
@@ -22,14 +18,16 @@ stylelint 為 npm 套件，須要先安裝：
 npm install stylelint --save-dev
 ```
 
-stylelint 一定要配置設定檔，因此要建立檔案 `stylelint.config.js` ：
+## 使用 stylelint
+
+安裝完成後，由於 stylelint 一定要配置設定檔，因此要建立檔案 `stylelint.config.js` ：
 
 ```js
 module.exports = {
   rules: {
     'declaration-block-single-line-max-declarations': 1,
-    'block-opening-brace-space-before': 'always'
-  }
+    'block-opening-brace-space-before': 'always',
+  },
 };
 ```
 
@@ -46,10 +44,10 @@ a{top:0;--height:10px;color:pink; }
 執行 stylelint ：
 
 ```bash
-> npx stylelint samples/style.css      
+> npx stylelint samples/style.css
 
 samples/style.css
- 1:1  ✖  Expected single space before "{"      block-opening-brace-space-before              
+ 1:1  ✖  Expected single space before "{"      block-opening-brace-space-before
  1:2  ✖  Expected no more than 1 declaration   declaration-block-single-line-max-declarations
 ```
 
@@ -100,19 +98,17 @@ npm install stylelint-order --save-dev
 
 ```js
 module.exports = {
-  plugins: [
-    'stylelint-order'
-  ],
+  plugins: ['stylelint-order'],
   rules: {
-    "order/order": [
-      "custom-properties",
-      "dollar-variables",
-      "declarations",
-      "rules",
-      "at-rules"
+    'order/order': [
+      'custom-properties',
+      'dollar-variables',
+      'declarations',
+      'rules',
+      'at-rules',
     ],
     // ...
-  }
+  },
   // ...
 };
 ```
@@ -129,8 +125,8 @@ primary 選項是必要的，它用來設定規則的定義，其值對應規則
 module.exports = {
   rules: {
     'declaration-block-single-line-max-declarations': 1,
-    'block-opening-brace-space-before': 'always'
-  }
+    'block-opening-brace-space-before': 'always',
+  },
 };
 ```
 
@@ -142,17 +138,18 @@ module.exports = {
 module.exports = {
   rules: {
     'selector-max-type': [0, { ignore: ['child', 'descendant', 'compounded'] }],
-  }
+  },
 };
 ```
 
 例子中的 `{ ignore: ['child', 'descendant', 'compounded'] }` 就是 secondary 選項。
 
-## 總結
+## 本文重點整理
 
-隨著專案規模的擴大，樣式表會越趨龐大，許多的規則混雜在列表中，造成開發時的可讀性降低，在各個設定的影響下也可能造成樣式的錯誤。
-
-stylelint 利用靜態分析，幫助使用者在開發時就找出問題，並優化可讀性，使得開發效率增加，在生產環境下也可以揀哨錯物的產生。
+- 隨著專案規模的擴大，樣式表會越趨龐大，許多的規則混雜在列表中，造成開發時的可讀性降低，在各個設定的影響下也可能造成樣式的錯誤。
+- stylelint 利用靜態分析，幫助使用者在開發時就找出問題，並優化可讀性，使得開發效率增加，在生產環境下也可以減少錯誤的產生。
+- 設定預設的規則包來減少配置的花費。
+- 可以在配置檔中覆寫原本的設定，達到客製的效果。
 
 ## 參考資料
 
