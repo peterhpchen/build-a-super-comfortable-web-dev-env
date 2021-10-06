@@ -1,24 +1,20 @@
-# Prettier
-
-使用 Prettier 格式化程式碼。
-
-## 介紹 Prettier
-
-Prettier 是個程式碼格式化工具，它是一個 npm 套件，在執行 CLI 指令後使用配置檔中的設定對於指定檔案進行格式化。
-
-Prettier 支援的語言十分豐富，有 JavaScript 、 CSS 、 HTML 與 Markdown 等（支援的語言列表請參照 [What is Prettier?](https://prettier.io/docs/en/index.html)），如果使用插件擴充，則可以支援更多其他的語言（插件列表請參照 [Plugins](https://prettier.io/docs/en/plugins.html#official-plugins) ）。
-
-## Prettier 解決的問題
+# 23 - Prettier - 格式化程式碼工具
 
 制定程式碼格式規範對於可讀性來說是必須的，如果開發者寫程式時都有各自的格式規範，那整個專案的程式碼會十分混亂。
 
-Prettier 會幫助我們自動地格式化檔案內容，藉以減少在開發時還需自己手動格式化的麻煩。
-
 另一方面，為了取得開發者們對於格式的一致認同，我們必須花許多時間在討論與 review 這些格式規範上，進而浪費許多寶貴的開發時間。
+
+## 不需要自己設定的格式化工具 - Prettier
+
+Prettier 會幫助我們自動地格式化檔案內容，藉以減少在開發時還需自己手動格式化的麻煩。
 
 Prettier 以[自己認為的最適解](https://prettier.io/docs/en/rationale.html)產生出一套格式規範，這個規範是預設的，要修改必須明確設定於配置檔上，這樣的設計是希望開發者們採用預設的規範，來減少對於格式規範討論所花費的時間。
 
-## 使用 Prettier
+Prettier 是一個 npm 套件，在執行 CLI 指令後使用配置檔中的設定對於指定檔案進行格式化。
+
+Prettier 支援的語言十分豐富，有 JavaScript 、 CSS 、 HTML 與 Markdown 等（支援的語言列表請參照 [What is Prettier?](https://prettier.io/docs/en/index.html)），如果使用插件擴充，則可以支援更多其他的語言（插件列表請參照 [Plugins](https://prettier.io/docs/en/plugins.html#official-plugins) ）。
+
+## 安裝 Prettier
 
 Prettier 是個 npm 套件，要先安裝：
 
@@ -27,6 +23,8 @@ npm install prettier --save-dev --save-exact
 ```
 
 > 由於 Prettier 的每個 release 版本都會對格式化的方式進行變動，因此要使用 `--save-exact` 避免更新版本。
+
+## 使用 Prettier
 
 要變更格式化規則時可以在專案根目錄中建立配置檔 `.prettierrc.js` ：
 
@@ -112,17 +110,13 @@ package-lock.json
 
 > 如果想要格式化 `node_modules` 目錄的內容，可以使用 `--with-node-modules` CLI 參數。
 
-## 總結
+## 本文重點整理
 
-每個人對於程式碼格式都有自己的偏好與習慣，如果格式不統一的話，可讀性會降低，而要統一格式又要花大量的時間討論，使開發的量能減弱。
-
-Prettier 作為一個程式碼格式化工具，它預設了一套最適解的格式規範，使用者不用去討論各種格式相關的規範，只要使用 Prettier 即可達成格式化的目的。
-
-除了預設規範，使用者也可以藉由配置自行修改規則，並加上 `.prettierignore` 排除不需格式化的檔案。
-
-設定完成後使用 npm 安裝 Prettier ，並使用 CLI 指令即可對程式碼做格式化的處理。
-
-Prettier 專注在格式化的作業上，給予使用者輕鬆格式化多種程式碼的能力，是個能使開發效率增加的便利工具。
+- 每個人對於程式碼格式都有自己的偏好與習慣，如果格式不統一的話，可讀性會降低，而要統一格式又要花大量的時間討論，使開發的量能減弱。
+- Prettier 作為一個程式碼格式化工具，它預設了一套最適解的格式規範，使用者不用去討論各種格式相關的規範，只要使用 Prettier 即可達成格式化的目的。
+- 除了預設規範，使用者也可以藉由配置自行修改規則，並加上 `.prettierignore` 排除不需格式化的檔案。
+- 設定完成後使用 npm 安裝 Prettier ，並使用 CLI 指令即可對程式碼做格式化的處理。
+- Prettier 專注在格式化的作業上，給予使用者輕鬆格式化多種程式碼的能力，是個能使開發效率增加的便利工具。
 
 ## 參考資料
 
