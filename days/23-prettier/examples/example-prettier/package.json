@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "prettier": "prettier",
+    "prettier:write": "prettier --write",
+    "prettier:check": "prettier --check",
+    "prettier:no-config": "prettier --no-config",
+    "prettier:cli-options": "prettier --no-config --single-quote --html-whitespace-sensitivity strict"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
+}
