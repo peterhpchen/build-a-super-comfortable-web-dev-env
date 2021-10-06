@@ -1,18 +1,14 @@
-# ESLint
-
-使用 ESLint 提示與規範 JavaScript 程式碼。
-
-## 介紹 ESLint
-
-ESLint 會依照使用者配置的設定靜態分析 JavaScript 程式碼，並將可能的問題輸出讓使用者可以予以修正。
-
-除了顯示提示訊息外， ESLint 可以針對沒有爭議的規則直接進行修改，減少開發時機器式的優化所浪費的時間。
-
-## ESLint 解決的問題
+# 24 - ESLint - Lint JavaScript 程式碼
 
 使用程式語言實作功能時，一百個人寫就會有一百種不同的程式碼，雖然都可以正常運作，但有些寫法（例如全域變數）會使系統結構脆弱，容易造成錯誤。
 
 為了避免這些錯誤，開發團隊會在開發的過程中導入 Code Review 以減少問題的產生，但是對於程式碼量龐大的大型專案來說， Code Review 所花費的時間巨大，間接影響了開發的進度，使得有些團隊為了趕時間而犧牲了 Code Review 的時間，這使得程式碼的品質日益衰退，最後無可挽回。
+
+## 讓 JavaScript 代碼更漂亮 - ESLint
+
+![favicon](./assets/favicon.512x512.png)
+
+ESLint 會依照使用者配置的設定靜態分析 JavaScript 程式碼，並將可能的問題輸出讓使用者可以予以修正。
 
 為了減少 Code Review 的時間， ESLint 使用靜態分析程式碼，將可能的問題抓出，可以自動修復的就覆寫，不能的就輸出訊息提示開發者，開發者可以依照提示做對應的討論及修改。
 
@@ -20,7 +16,7 @@ ESLint 除了本身的規範外，它可以用插件的方式擴充功能，使�
 
 撇開商業邏輯的錯誤，程式碼中關於語意及語法的問題大部分都是可以被 ESLint 獲取的，因此使用此類工具可以減少大量的 Code Review 時間，讓團隊可以針對商務邏輯做討論。
 
-## 使用 ESLint
+## 安裝 ESLint
 
 ESLint 為 npm 套件，因此要使用 npm 安裝：
 
@@ -30,7 +26,9 @@ npm install eslint --save-dev
 
 > ESLint 也可以裝於 global ，但是為了與各個 plugins 與配置版本匹配，建議安裝於 local 。
 
-安裝後初始化 ESLint ：
+## 使用 ESLint
+
+安裝完成後，可以初始化 ESLint ：
 
 ```bash
 > npx eslint --init
@@ -96,18 +94,18 @@ module.exports = {
   // ...
   rules: {
     'no-var': 'warn',
-    'quotes': ['error', 'double'],
+    quotes: ['error', 'double'],
   },
 };
 ```
 
-- `no-var` ：層級調整為 `warn`
+- `no-var` ：層級調整為 `warn`
 - `quotes` ：層級調整為 `error` ，並改為雙引號（ `double` ）
 
 依照規則的調整， ESLint 檢查的規則也會隨之變化：
 
 ```js
-> npx eslint samples/sample.js 
+> npx eslint samples/sample.js
 
 /Users/PeterChen/Documents/code/build-a-super-comfortable-web-dev-env/days/05-eslint/examples/example-eslint/samples/sample.js
   1:1   warning  Unexpected var, use let or const instead  no-var
@@ -145,7 +143,7 @@ module.exports = {
 module.exports = {
   // ...
   rules: {
-    'quotes': ['error', 'double'],
+    quotes: ['error', 'double'],
   },
 };
 ```
@@ -165,11 +163,12 @@ module.exports = {
 
 這樣一來 `airbnb` 的相關規範都會被 ESLint 識別並運行，使用者依然可以使用 `rules` 修改預設的規則。
 
-## 總結
+## 本文重點整理
 
-在開發時，為了確保程式碼的質量而需要引入 Code Review 來檢討與優化程式碼，以避免發生錯誤，而在語言的寫法方面，大部分的問題都是不斷重複卻很容易識別的，這使得 Code Review 的時間會浪費在這些問題上。
-
-ESLint 作為規範 JavaScript 語言寫法的規範工具，提供自動化的靜態掃描，以檢查出各種語法相關的問題以及進行修正，大量地節省時間與問題發生的頻率，對於開發來說是不可或缺的工具。
+- 在開發時，為了確保程式碼的質量而需要引入 Code Review 來檢討與優化程式碼，以避免發生錯誤，而在語言的寫法方面，大部分的問題都是不斷重複卻很容易識別的，這使得 Code Review 的時間會浪費在這些問題上。
+- ESLint 作為規範 JavaScript 語言寫法的規範工具，提供自動化的靜態掃描，以檢查出各種語法相關的問題以及進行修正，大量地節省時間與問題發生的頻率，對於開發來說是不可或缺的工具。
+- 使用初始化的指令，可以依照問答完成 ESLint 的配置檔設定。
+- 依據專案的需求，可以自己配置設定以符合專案的運作。
 
 ## 參考資料
 
