@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "prepare": "cd ../../../../ && husky install days/18-combo-commit-message/examples/husky-commitizen-commitlint/.husky"
+    "prepare": "cd ../../../../ && husky install days/22-commitizen/examples/husky-commitizen-commitlint/.husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",

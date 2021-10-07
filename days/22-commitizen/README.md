@@ -2,7 +2,7 @@
 
 針對 commit 訊息的規範，最為人熟知的是 [Angular 的 Commit Message Format](https://github.com/angular/angular/blob/9fb79d38aade67f6f3bcdac0ffa93b8806baa215/CONTRIBUTING.md#commit) ，此規則將訊息分為 **header** 、 **body** 與 **footer** 三個部分，分別又有不同的規則，這使得要寫出符合規範的訊息變成了一件不簡單的事情。
 
-## 做個好的 Commit 訊息 - Commitizen
+## 寫個好的 Commit 訊息 - Commitizen
 
 為了避免寫出不符規範的 commit 訊息而遭到退回， Commitizen 使用問答的方式，讓使用者在完成問答時就可以邊寫出符合規範的訊息，以減少來回的次數。
 
@@ -18,7 +18,7 @@ npm install commitizen --save-dev
 
 ## 使用 Commitizen
 
-安裝完成後，將 commitizen 的指令 `cz` 加入 `package.json` 的 `scripts` ：
+安裝完成後，將 Commitizen 的指令 `cz` 加入 `package.json` 的 `scripts` ：
 
 ```json
 {
@@ -81,7 +81,7 @@ Commitlint 和 Commitizen 的配置不一致（以 `package.json` 中的配置�
 
 ### 方法一： `@commitlint/prompt`
 
-[`@commitlint/prompt`](https://github.com/conventional-changelog/commitlint/blob/fc1ee0b0af4167f2e2c8f79ffcf03d0e51a5d045/@commitlint/prompt/README.md) 是個 commitizen 的 adapter ，它可以讓 commitizen 使用 commitlint 的配置。
+[`@commitlint/prompt`](https://github.com/conventional-changelog/commitlint/blob/fc1ee0b0af4167f2e2c8f79ffcf03d0e51a5d045/@commitlint/prompt/README.md) 是個 Commitizen 的 adapter ，它可以讓 Commitizen 使用 Commitlint 的配置。
 
 首先安裝 `@commitlint/prompt` ：
 
@@ -89,7 +89,7 @@ Commitlint 和 Commitizen 的配置不一致（以 `package.json` 中的配置�
 npm install @commitlint/prompt --save-dev
 ```
 
-然後修改 `package.json` 中 commitizen 的 adapter 路徑：
+然後修改 `package.json` 中 Commitizen 的 adapter 路徑：
 
 ```json
 {
@@ -102,13 +102,12 @@ npm install @commitlint/prompt --save-dev
 ```
 
 > 如果有安裝 adapter `cz-conventional-changelog` ，請將它解安裝。
-> 這樣一來執行 `npm run commit` 的時候， commitizen 就會使用 commitlint 的配置作為提示的依據。
+
+這樣一來執行 `npm run commit` 的時候， Commitizen 就會使用 Commitlint 的配置作為提示的依據。
 
 ### 方法二： `@commitlint/prompt-cli`
 
-[`@commitlint/prompt-cli`](https://github.com/conventional-changelog/commitlint/blob/fc1ee0b0af4167f2e2c8f79ffcf03d0e51a5d045/@commitlint/prompt-cli/README.md) 是個獨立的訊息提示工具，它並不依賴於 commitizen [^still-dependent]，並使用 commitlint 的配置作為設定。
-
-[^still-dependent]: 雖然使用者不用操作 commitizen ，但是 `@commitlint/prompt-cli` 使用了 `@commitlint/prompt` 實作，因此內部依然與 commitizen 相依。
+[`@commitlint/prompt-cli`](https://github.com/conventional-changelog/commitlint/blob/fc1ee0b0af4167f2e2c8f79ffcf03d0e51a5d045/@commitlint/prompt-cli/README.md) 是個獨立的訊息提示工具，它並不依賴於 Commitizen （雖然使用者不用操作 Commitizen ，但是 `@commitlint/prompt-cli` 使用了 `@commitlint/prompt` 實作，因此內部依然與 Commitizen 相依。），並使用 Commitlint 的配置作為設定。
 
 首先安裝 `@commitlint/prompt-cli` ：
 
@@ -126,14 +125,14 @@ npm install @commitlint/prompt-cli --save-dev
 }
 ```
 
-> 由於已經不相依於 commitizen ，可以刪除 `package.json` 中的 `config.commitizen` 設定與解安裝 `commitizen` 和 `cz-conventional-changelog` 兩個套件。
+> 由於已經不相依於 Commitizen ，可以刪除 `package.json` 中的 `config.commitizen` 設定與解安裝 `commitizen` 和 `cz-conventional-changelog` 兩個套件。
 > 這樣一來執行 `npm run commit` 的時候，就會執行 `@commitlint/prompt-cli` 提示使用者輸入正確的訊息。
 
 ### 方法三： `@commitlint/cz-commitlint`
 
-前兩個方法都採用輸入的方式建立訊息，其互動的方式與原本使用 commitizen 的 `cz-conventional-changelog` 時有差別。
+前兩個方法都採用輸入的方式建立訊息，其互動的方式與原本使用 Commitizen 的 `cz-conventional-changelog` 時有差別。
 
-如果想要使用原本 `cz-conventional-changelog` 的互動方式，可以使用 `@commitlint/cz-commitlint` 作為 commitizen 的 adapter ，它不僅可以使用 commitlint 的配置，還有與 `cz-conventional-changelog` 相同的互動方式。
+如果想要使用原本 `cz-conventional-changelog` 的互動方式，可以使用 `@commitlint/cz-commitlint` 作為 Commitizen 的 adapter ，它不僅可以使用 Commitlint 的配置，還有與 `cz-conventional-changelog` 相同的互動方式。
 
 首先安裝 `@commitlint/cz-commitlint` ：
 
@@ -141,7 +140,7 @@ npm install @commitlint/prompt-cli --save-dev
 npm install @commitlint/cz-commitlint --save-dev
 ```
 
-然後修改 `package.json` 中 commitizen 的 adapter 路徑：
+然後修改 `package.json` 中 Commitizen 的 adapter 路徑：
 
 ```json
 {
@@ -154,17 +153,18 @@ npm install @commitlint/cz-commitlint --save-dev
 ```
 
 > 如果有安裝 adapter `cz-conventional-changelog` ，請將它解安裝。
-> 這樣一來執行 `npm run commit` 時，就可以使用 `cz-conventional-changelog` 的互動方式與 commitlint 的配置檔做設定了。
 
-### 最終採用 `@commitlint/cz-commitlint` 整合 commitlint 與 commitizen
+這樣一來執行 `npm run commit` 時，就可以使用 `cz-conventional-changelog` 的互動方式與 Commitlint 的配置檔做設定了。
+
+### 最終採用 `@commitlint/cz-commitlint` 整合 commitlint 與 Commitizen
 
 我們採用方法三的 `@commitlint/cz-commitlint` 作為整合方案，因為 `@commitlint/cz-commitlint` 的互動方式較 `@commitlint/prompt` 與 `@commitlint/prompt-cli` 更為人性化，也更為易用。
 
-## 使用 husky 為 commitizen 註冊 Git hooks
+## 使用 Husky 為 Commitizen 註冊 Git hooks
 
-到目前為止，我們都必須自己去叫用 commitizen 才能啟動，使用起來的步驟較原本多，也更不直覺，容易被忽略。
+到目前為止，我們都必須自己去叫用 Commitizen 才能啟動，使用起來的步驟較原本多，也更不直覺，容易被忽略。
 
-接下來我們藉由 husky 的幫助，將 commitizen 融入 Git flow 中，讓其更加的易用。
+接下來我們藉由 husky 的幫助，將 Commitizen 融入 Git flow 中，讓其更加的易用。
 
 使用 `husky add` 將指令加入 Git hooks ：
 
@@ -172,13 +172,13 @@ npm install @commitlint/cz-commitlint --save-dev
 npx husky add .husky/prepare-commit-msg 'exec < /dev/tty && node_modules/.bin/cz --hook || true'
 ```
 
-由於我們已經將 commitizen 加入 Git hooks 中了，因此可以刪除 `package.json` 中的 `commit` script ：
+由於我們已經將 Commitizen 加入 Git hooks 中了，因此可以刪除 `package.json` 中的 `commit` script ：
 
-```diff
+```json
 {
   "scripts": {
--    "commit": "cz"
-  },
+    // "commit": "cz"
+  }
 }
 ```
 
@@ -190,14 +190,14 @@ npm install
 
 `npm install` 會觸發在執行 `husky-init` 時建立的 `prepare` script ，去做相關的初始化工作。
 
-> 如果需要 husky 相關的使用說明，請看本系列的「 [20 - Husky - Git Hooks 工具](../20-husky/README.md)」 一文的介紹。
+> 如果需要 Husky 相關的使用說明，請看本系列的「 [20 - Husky - Git Hooks 工具](../20-husky/README.md)」 一文的介紹。
 
-完成設定後，當你輸入指令 `git commit` ，就會啟動 commitizen 來編輯訊息。
+完成設定後，當你輸入指令 `git commit` ，就會啟動 Commitizen 來編輯訊息。
 
 ## 本文重點整理
 
 - commit 訊息規範複雜，為了避免不符規範的 commit 遭退回， Commitizen 使用交互問答的方式，讓使用者在回答問題的過程中迅速且精準的完成訊息的編輯，以避免錯誤發生。
-- 在整合 Commitizen 與 Commitlint 時，使用 `@commitlint/cz-commitlint` 作為 commitizen 的 adapter ，讓我們可以用 commitlint 的配置設定 commitizen ，並採用 `cz-conventional-changelog` 的互動方式建立訊息。
+- 在整合 Commitizen 與 Commitlint 時，使用 `@commitlint/cz-commitlint` 作為 Commitizen 的 adapter ，讓我們可以用 Commitlint 的配置設定 Commitizen ，並採用 `cz-conventional-changelog` 的互動方式建立訊息。
 - 與 Husky 整合，可以讓我們在編輯 Commit 訊息時，可以啟動 Commitizen 。
 
 ## 參考資料
