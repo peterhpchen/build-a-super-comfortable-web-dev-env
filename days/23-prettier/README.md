@@ -110,6 +110,48 @@ package-lock.json
 
 > 如果想要格式化 `node_modules` 目錄的內容，可以使用 `--with-node-modules` CLI 參數。
 
+## 與 VS Code 整合
+
+在 VS Code 中使用 Prettier 時，先安裝 Prettier 插件：
+
+```bash
+code --install-extension esbenp.prettier-vscode
+```
+
+接著需要調整 Visual Studio Code 的設定，啟動**儲存時自動格式化**與將 **Prettier 設為預設的格式化工具**：
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
+設定完成後，每次儲存時， Visual Studio Code 都會依照專案中的 `.prettierrc.js` 設定啟動 Prettier 格式化檔案內容。
+
+### 將設定存於專案中
+
+為了讓每次新開此專案的使用者都可以使用到 Prettier ，我們可以將設定配置在 `.vscode` 目錄中。
+
+首先，我們需要紀錄要安裝的插件，在 `.vscode/extensions.json` 中：
+
+```json
+{
+  "recommendations": ["esbenp.prettier-vscode"]
+}
+```
+
+另外相關的設定也可以在 `.vscode/settings.json` 中紀錄：
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
+這樣一來，開啟此專案的新使用者就可以使用插件推薦清單安裝 Prettier ，並將相關的配置做設定。
+
 ## 本文重點整理
 
 - 每個人對於程式碼格式都有自己的偏好與習慣，如果格式不統一的話，可讀性會降低，而要統一格式又要花大量的時間討論，使開發的量能減弱。
@@ -117,6 +159,7 @@ package-lock.json
 - 除了預設規範，使用者也可以藉由配置自行修改規則，並加上 `.prettierignore` 排除不需格式化的檔案。
 - 設定完成後使用 npm 安裝 Prettier ，並使用 CLI 指令即可對程式碼做格式化的處理。
 - Prettier 專注在格式化的作業上，給予使用者輕鬆格式化多種程式碼的能力，是個能使開發效率增加的便利工具。
+- 使用 VS Code 的 Prettier 插件，可以在儲存時啟動 Prettier 執行格式化。
 
 ## 參考資料
 
