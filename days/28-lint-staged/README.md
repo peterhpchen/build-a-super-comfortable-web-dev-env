@@ -1,20 +1,16 @@
-# lint-staged
-
-使用 lint-staged 對 Git 暫存（ Staged ）檔案執行程序。
-
-## 介紹 lint-staged
-
-lint-staged 是個 npm 套件，它會依照配置將符合規則（ glob ）的 Git 暫存檔案路徑帶入設定的程序中並執行。
-
-## 使用 lint-staged 的原因
+# 27 - lint-staged - Lint Git Commit 的檔案
 
 做 lint 、 format 或是通過測試，對於程式碼的品質維護有很大的幫助，因此在提交代碼時，我們會使用 Git hooks 確保這些優化程序有被執行。
 
 但是在 Git hooks 執行這些優化時，程序處理的範圍會包含整個專案的程式碼，就算是未提交的檔案，依然會被作為優化對象，這樣一來會浪費許多時間。
 
+## 只 Lint 修改的檔案 - lint-staged
+
+lint-staged 是個 npm 套件，它會依照配置將符合規則（ glob ）的 Git 暫存檔案路徑帶入設定的程序中並執行。
+
 lint-staged 的目的就是讓這些優化程序只作用於提交的程式碼上，進而減少花費的時間。
 
-## 使用 lint-staged
+## 安裝 lint-staged
 
 用 npm 安裝 lint-staged ：
 
@@ -22,7 +18,9 @@ lint-staged 的目的就是讓這些優化程序只作用於提交的程式碼�
 npm install lint-staged --save-dev
 ```
 
-接著要建立配置檔 `lint-staged.config.js` ：
+## 使用 lint-staged
+
+使用前需要建立配置檔 `lint-staged.config.js` ：
 
 ```js
 module.exports = {
@@ -30,7 +28,7 @@ module.exports = {
 };
 ```
 
-為了解說 lint-staged 的功能，將所有提交的檔案都以 `echo` 輸出參數資訊。
+為了解說 lint-staged 的功能，這裡將所有提交的檔案都以 `echo` 輸出參數資訊。
 
 接著將檔案加入暫存區中：
 
@@ -92,9 +90,17 @@ module.exports = {
 
 它會對所有的提交的檔案執行 `echo` 與 `cat` 。
 
-## 在 husky 中設置 lint-staged
+## 與 Husky 整合
 
-為了在提交代碼時可以觸發各種檢查工具，我們需要將 lint-staged 藉由 husky 配置到 Git hook 上：
+藉由與 Husky 的整合，在提交前確保程式碼的品質，讓開發者可以：
+
+- 依提交的程式碼**種類**，對其做對應的 lint 、 format 與測試。
+- 只針對**提交的程式碼**做相關的 lint 、 format 與測試，避免全局的執行處理。
+- 在 `git commit` 時自動啟用 lint 、 format 與測試。
+
+### 在 Husky 中設置 lint-staged
+
+為了在提交代碼時可以觸發各種檢查工具，我們需要將 lint-staged 藉由 Husky 配置到 Git hook 上：
 
 ```bash
 npx husky add .husky/pre-commit 'npx lint-staged'
@@ -108,10 +114,11 @@ npm install
 
 `npm install` 會觸發在執行 `husky-init` 時建立的 `prepare` script ，去做相關的初始化工作。
 
-> 如果需要 husky 相關的使用說明，請看[本系列的 husky 一文]()的介紹。
-> 這樣一來，每當我們提交代碼時，就會叫用 `npx lint-staged` 把提交的檔案路徑送去給 lint-staged 中設定指令做處理。
+> 如果需要 Husky 相關的使用說明，請看「 [20 - Husky - Git Hooks 工具](../20-husky/README.md)」的介紹。
 
-## 在 lint-staged 中依照檔案類型設置對應的工具
+這樣一來，每當我們提交代碼時，就會叫用 `npx lint-staged` 把提交的檔案路徑送去給 lint-staged 中設定指令做處理。
+
+### 在 lint-staged 中依照檔案類型設置對應的工具
 
 為了讓 lint-staged 可以對於各類型的檔案提供合適的工具做處理，我們需要設定 `lint-staged.config.js` ：
 
@@ -130,7 +137,7 @@ module.exports = {
 
 - 在每次提交時，對專案中所有檔案做優化的處理是沒必要的，只會浪費更多的資源。
 - lint-staged 讓優化的程序可以聚焦於暫存檔案上，只有那些這次提交的檔案會作用這些優化程序，並且可以利用 glob 指示要使用不同指令。
-- 藉由 lint-staged 與 husky 的搭配，我們可以在 `git commit` 的時候叫用 lint-staged ，接著在 lint-staged 中針對各種不同的檔案類型設置對應的處理工具，如此一來，可以減少工具因不符合的檔案而進行無用的處理，也可以降低衝突的產生。
+- 藉由 lint-staged 與 Husky 的搭配，我們可以在 `git commit` 的時候叫用 lint-staged ，接著在 lint-staged 中針對各種不同的檔案類型設置對應的處理工具，如此一來，可以減少工具因不符合的檔案而進行無用的處理，也可以降低衝突的產生。
 
 ## 參考資料
 
