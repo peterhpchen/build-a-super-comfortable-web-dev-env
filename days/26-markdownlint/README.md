@@ -96,11 +96,56 @@ module.exports = {
 
 `markdownlint-cli` 採用 `.gitignore` 的設定來排除檔案，它會檢查當前目錄是否有 `.markdownlintignore` 以用作排除檔案的依據。
 
-## 總結
+## 與 VS Code 整合
+
+首先，安裝 Markdownlint 插件：
+
+```bash
+code --install-extension davidanson.vscode-markdownlint
+```
+
+如此一來， Markdownlint 插件會使用設定檔 `.markdownlint.js` 的配置，在編輯器上顯示各種提示。
+
+接著我們要調整配置，使得檔案在儲存時執行 Markdownlint 修復檔案內容：
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": true
+  }
+}
+```
+
+### 將設定存於專案中
+
+為了讓每次新開此專案的使用者都可以使用到 Markdownlint ，我們可以將設定配置在 `.vscode` 目錄中。
+
+首先，我們需要紀錄要安裝的插件，在 `.vscode/extensions.json` 中：
+
+```json
+{
+  "recommendations": ["davidanson.vscode-markdownlint"]
+}
+```
+
+另外相關的設定也可以在 `.vscode/settings.json` 中紀錄：
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+這樣一來，開啟此專案的新使用者就可以使用插件推薦清單安裝 Markdownlint ，並將相關的配置做設定。
+
+## 本文重點整理
 
 - Markdown 作為文件格式，提供了許多語法來設定各種豐富的樣式，但由於其極高的自由度，使得每個人在使用 Markdown 寫文件時總會有自己的一套方法，這造成了寫法不一致的問題。
 - Markdownlint 作為 Markdown 格式的規範工具，提供了許多有用的規則，使用者利用這些規則來確保不同 Markdown 文件的一致性。
 - 如果想要自己設定規則也可以建立配置檔做相關的設定，並利用 `.markdownlintignore` 檔案的設定排除特定的檔案。
+- 使用 VS Code 的 Markdownlint 插件，可以在儲存時啟動 Markdownlint 對 Markdown 做 lint。
 
 ## 參考資料
 
