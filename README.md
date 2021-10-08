@@ -41,9 +41,10 @@
 - [24 - ESLint - Lint JavaScript 程式碼](./days/24-eslint/README.md)
 - [25 - Stylelint - Lint CSS 程式碼](./days/25-stylelint/README.md)
 - [26 - MarkdownLint - Lint Markdown 文件](./days/26-markdownlint/README.md)
-- [27 - lint-staged - Lint Git Commit 的檔案](./days/27-lint-staged/README.md)
-- [28 - Hygen - 程式碼產生器](./days/28-hygen/README.md)
+- [27 - EditorConfig + Prettier + ESLint + stylelint + markdownlint - All you can lint](./days/27-combo-all-you-can-lint/README.md)
+- [28 - lint-staged - Lint Git Commit 的檔案](./days/27-lint-staged/README.md)
+- [29 - Hygen - 程式碼產生器](./days/28-hygen/README.md)
 
 ## 結尾
 
-- [99 - 兵器譜外尚有寶具](./days/99-summary/README.md)
+- [99 - 順手工具的最好](./days/99-summary/README.md)
