@@ -163,12 +163,57 @@ module.exports = {
 
 這樣一來 `airbnb` 的相關規範都會被 ESLint 識別並運行，使用者依然可以使用 `rules` 修改預設的規則。
 
+## 與 VS Code 整合
+
+首先，安裝 ESLint 插件：
+
+```bash
+code --install-extension dbaeumer.vscode-eslint
+```
+
+如此一來， ESLint 插件會使用設定檔 `.eslintrc.js` 的配置，在編輯器上顯示各種提示。
+
+接著我們要調整配置，使得檔案在儲存時執行 ESLint 修復檔案內容：
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+### 將設定存於專案中
+
+為了讓每次新開此專案的使用者都可以使用到 ESLint ，我們可以將設定配置在 `.vscode` 目錄中。
+
+首先，我們需要紀錄要安裝的插件，在 `.vscode/extensions.json` 中：
+
+```json
+{
+  "recommendations": ["dbaeumer.vscode-eslint"]
+}
+```
+
+另外相關的設定也可以在 `.vscode/settings.json` 中紀錄：
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+這樣一來，開啟此專案的新使用者就可以使用插件推薦清單安裝 ESLint ，並將相關的配置做設定。
+
 ## 本文重點整理
 
 - 在開發時，為了確保程式碼的質量而需要引入 Code Review 來檢討與優化程式碼，以避免發生錯誤，而在語言的寫法方面，大部分的問題都是不斷重複卻很容易識別的，這使得 Code Review 的時間會浪費在這些問題上。
 - ESLint 作為規範 JavaScript 語言寫法的規範工具，提供自動化的靜態掃描，以檢查出各種語法相關的問題以及進行修正，大量地節省時間與問題發生的頻率，對於開發來說是不可或缺的工具。
 - 使用初始化的指令，可以依照問答完成 ESLint 的配置檔設定。
 - 依據專案的需求，可以自己配置設定以符合專案的運作。
+- 使用 VS Code 的 ESLint 插件，可以在儲存時啟動 ESLint 對 JavaScript 做 lint。
 
 ## 參考資料
 
