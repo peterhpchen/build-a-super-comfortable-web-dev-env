@@ -6,6 +6,8 @@
 
 ## 不需要自己設定的格式化工具 - Prettier
 
+![icon](./assets/icon.png)
+
 Prettier 會幫助我們自動地格式化檔案內容，藉以減少在開發時還需自己手動格式化的麻煩。
 
 Prettier 以[自己認為的最適解](https://prettier.io/docs/en/rationale.html)產生出一套格式規範，這個規範是預設的，要修改必須明確設定於配置檔上，這樣的設計是希望開發者們採用預設的規範，來減少對於格式規範討論所花費的時間。
