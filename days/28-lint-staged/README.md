@@ -1,4 +1,4 @@
-# 27 - lint-staged - Lint Git Commit 的檔案
+# 28 - lint-staged - Lint Git Commit 的檔案
 
 做 lint 、 format 或是通過測試，對於程式碼的品質維護有很大的幫助，因此在提交代碼時，我們會使用 Git hooks 確保這些優化程序有被執行。
 
