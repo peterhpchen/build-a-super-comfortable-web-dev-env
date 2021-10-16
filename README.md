@@ -51,7 +51,7 @@
 
 ## 番外
 
-- [Extra01 - Glob - 配置目標檔案與目錄](./days/extra01-glob/README.md)
+- [Extra01 - glob - 配置目標檔案與目錄](./days/extra01-glob/README.md)
 - [Extra02 - Ignore - 配置忽略的檔案與目錄](./days/extra02-ignore/README.md)
 - [Extra03 - Browserslist - 配置專案執行目標環境](./days/extra03-browserslist/README.md)
 - [Extra04 - Git - 程式碼版本控制](./days/extra04-git/README.md)
