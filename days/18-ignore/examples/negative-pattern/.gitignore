@@ -1,0 +1,6 @@
+/*
+!.gitignore
+!/foo
+/foo/*
+!/foo/bar
+\!important!.txt

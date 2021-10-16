@@ -1,0 +1,2 @@
+# Ignore any js file in directory `sample` with any depth
+samples/**/*.js

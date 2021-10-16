@@ -1,0 +1,2 @@
+# Ignore `foo` directory of any level of the .gitignore file
+foo
