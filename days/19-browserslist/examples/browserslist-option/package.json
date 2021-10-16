@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "browserslist": "browserslist"
+  },
+  "dependencies": {
+    "browserslist": "^4.16.6"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

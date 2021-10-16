@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "browserslist": "browserslist --config=.browserslistrc"
+  },
+  "dependencies": {
+    "browserslist": "^4.16.6"
+  }
+}
