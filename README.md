@@ -48,3 +48,15 @@
 ## 結尾
 
 - [99 - 順手工具的最好](./days/99-summary/README.md)
+
+## 番外
+
+- [Extra01 - Glob - 配置目標檔案與目錄](./days/extra01-glob/README.md)
+- [Extra02 - Ignore - 配置忽略的檔案與目錄](./days/extra02-ignore/README.md)
+- [Extra03 - Browserslist - 配置專案執行目標環境](./days/extra03-browserslist/README.md)
+- [Extra04 - Git - 程式碼版本控制](./days/extra04-git/README.md)
+- [Extra05 - Docker - 容器化](./days/extra05-docker/README.md)
+- [Extra06 - TypeScript - 型別檢查工具](./days/extra06-typescript/README.md)
+- [Extra07 - Jest - 單元測試框架](./days/extra07-jest/README.md)
+- [Extra08 - Cypress - E2E 測試框架](./days/extra08-cypress/README.md)
+- [Extra09 - Storybook - 元件開發框架](./days/extra09-storybook/README.md)
