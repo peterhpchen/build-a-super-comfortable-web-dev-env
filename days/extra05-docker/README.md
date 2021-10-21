@@ -1,16 +1,14 @@
-# Docker
+# Extra05 - Docker - 容器化
 
-使用 Docker 作為開發環境。
-
-## 介紹 Docker
-
-Docker 會將應用跑在一個可以獨立運作的**容器**中，這個容器不會被宿主環境所影響，因此我們可以將它隨意的執行在任何支援 Docker 的環境中，而不被環境本身與應用程式中使用的技術所限制。
-
-## 使用 Docker 的原因
+> 此篇為番外，未收入在本篇的原因是 Docker 是個複雜的工具，因此需要更多的篇幅介紹此工具，但是以本篇的篇幅不足以說明 Docker 的操作，因此放入番外作為補充。
 
 在開發時，我們需要在電腦中安裝各式各樣的工具與套件後，才能進行開發。這過程中，常會遇到與環境相關的問題，在部署時同樣也會因為環境的問題，而需要針對各個環境去排除問題。這些問題都會使開發進度延宕，造成時間上的花費。
 
-使用 Docker ，我們不再需要在意目標環境的情形，只要確保容器運作正常，就可以將它部署至任何機器中，不管什麼作業系統，只要支援 Docker ，就可以藉由指令啟動執行，藉以省下配置的時間，專注在開發與優化的作業上。
+## 使環境容器化 - Docker
+
+Docker 會將應用跑在一個可以獨立運作的**容器**中，這個容器不會被宿主環境所影響，因此我們可以將它隨意的執行在任何支援 Docker 的環境中，而不被環境本身與應用程式中使用的技術所限制。
+
+有了 Docker ，我們不再需要在意目標環境的情形，只要確保容器運作正常，就可以將它部署至任何機器中，不管什麼作業系統，只要支援 Docker ，就可以藉由指令啟動執行，藉以省下配置的時間，專注在開發與優化的作業上。
 
 ## 安裝 Docker
 
@@ -138,17 +136,17 @@ Docker Compose 讓使用者可以用 `docker-compose.yml` 檔案配置多個容�
 version: '3.3'
 
 services:
-    mongo:
-        image: mongo
+  mongo:
+    image: mongo
 
-    mongoexpress:
-        image: mongo-express
-        ports:
-            - "8081:8081"
-        links:
-            - mongo
-        environment: 
-            - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017
+  mongoexpress:
+    image: mongo-express
+    ports:
+      - '8081:8081'
+    links:
+      - mongo
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017
 ```
 
 上例使用 docker compose 啟動 MongoDB 與它的管理工具 [`mongo-express`](https://github.com/mongo-express/mongo-express-docker) 。
@@ -184,9 +182,9 @@ docker image prune -a
 docker system prune --volumes
 ```
 
-## 總結
+## 本文重點整理
 
-Docker 讓開發與部署時更有彈性，我們不再需要花時間在安裝各種套件上，可以把心力放在開發與優化上。
+- Docker 讓開發與部署時更有彈性，我們不再需要花時間在安裝各種套件上，可以把心力放在開發與優化上。
 
 ## 參考資料
 
