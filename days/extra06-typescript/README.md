@@ -1,16 +1,14 @@
-# TypeScript
+# Extra06 - TypeScript - 型別檢查工具
 
-使用 TypeScript 作為 JavaScript 的型別方案。
-
-## 介紹 TypeScript
-
-TypeScript 是個 JavaScript 的超集語言，使用 TypeScript 的語法所寫出的代碼，會具有型別，藉由 TypeScript 提供的編譯器，可以檢查出程式中型別相關的問題。
-
-## 使用 TypeScript 的原因
+> 此篇為番外，未收入在本篇的原因是 TypeScript 會直接影響開發，使撰寫的程式語法與原本不同，因此需看專案或使用者的需求決定是否使用，因此放入番外作為補充。
 
 JavaScript 本身的語言特性，使其的變數並不會受到型別的約束，這雖然使 JavaScript 具有高度的彈性，但缺乏型別會導致在撰寫程式時遭受型別錯誤的問題而困擾。
 
-TypeScript 藉由編譯器的幫助，可以在原本的 JavaScript 語法上提供型別的支援，藉由變數的定義去推斷型別，並進一步提醒開發者注意型別問題。除了推斷的功能外， TypeScript 最強大的功能在於可以利用自身的語法**定義**型別，藉以將型別的約束力帶入 JavaScript 中，並且可以利用這些型別的定義為編輯器帶來自動完成、提示等功能，改善開發體驗。
+## 具有型別的 JavaScript - TypeScript
+
+TypeScript 是個 JavaScript 的超集語言，使用 TypeScript 的語法所寫出的代碼，會具有型別，藉由 TypeScript 提供的編譯器，可以在原本的 JavaScript 語法上提供型別的支援，藉由變數的定義去推斷型別，並進一步提醒開發者注意型別問題。
+
+除了推斷的功能外， TypeScript 最強大的功能在於可以利用自身的語法**定義**型別，藉以將型別的約束力帶入 JavaScript 中，並且可以利用這些型別的定義為編輯器帶來自動完成、提示等功能，改善開發體驗。
 
 ## 安裝 TypeScript
 
@@ -67,9 +65,9 @@ document.body.textContent = greeter(user);
 
 在參數（或變數）後加上 `: string` ，可以將其定義為字串型別，上面的例子中，由於變數 `user` 是個陣列，因此會被 TypeScript 認定為錯誤的型別。
 
-## 總結
+## 本文重點整理
 
-TypeScript 在原本 JavaScript 的語法上增加了型別的定義，為原本無型別的 JavaScript 帶來型別的嚴謹性，增加撰寫程式碼時的安全性。
+- TypeScript 在原本 JavaScript 的語法上增加了型別的定義，為原本無型別的 JavaScript 帶來型別的嚴謹性，增加撰寫程式碼時的安全性。
 
 ## 參考資料
 
